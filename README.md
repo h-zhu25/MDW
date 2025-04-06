@@ -255,3 +255,19 @@ Experto en Información => la clase responsable es la que tiene la información
 
 ![claseCustomer](/out/docs/diagrams/src/movies21/movies.svg)
 
+## <em>**Versión 22**</em>
+
+- Añadir metodo getRentalSummary en clase Customer para eliminar bucles while repetitivos.
+
+![claseCustomer](/out/docs/diagrams/src/movies22/movies.svg)
+
+## <em>**Versión 23**</em>
+
+- Eliminamos dependencia de clase Movie en clase Customer.
+
+## <em>**Versión 24**</em>
+
+- Añadimos Clasess RegularMovie, NewReleaseMovie y ChildrensMovie que contienen la lógica de cálculo de precio y puntos de alquiler previamente existentes en la clase Price y sus derivadas.
+
+![claseCustomer](/out/docs/diagrams/src/movies24/movies.svg)
+

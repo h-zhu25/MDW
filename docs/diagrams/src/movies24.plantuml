@@ -1,0 +1,62 @@
+@startuml movies
+
+class Customer {
+- String name;
+- List<Rental> rentals;
++ Costumer(String name)
++ void addRental(Rental rental)
++ String getName()
++ String statement()
+- RentalSummary getRentalSummary()
+}
+
+class Rental {
+- Movie movie;
+- int daysRented;
++ Rental(Movie movie, int daysRented)
++ int getDaysRented()
++ Movie getMovie()
++ double getCharge()
++ int getFrequentRenterPoints()
+}
+
+abstract class Movie {
++ static final int FREQUENT_RENTER_POINTS = 1;
+- String title;
++ Movie(String title)
++ double getCharge(int daysRented)
++ int getFrequentRenterPoints(int daysRented)
++ String getTitle()
+}
+
+
+class RegularMovie {
+{static}- double CHARGE = 2.0;
+{static}- double EXTRA CHARGE = 1.5;
+{static}- final int DAYS RENTED THRESHOLD = 2;
++ RegularMovie(String title)
++ double getCharge(int daysRented)
+}
+class ChildrenMovie {
+{static}- double CHARGE = 1.5;
+{static}- double EXTRA CHARGE = 1.5;
+{static}- int DAYS RENTED THRESHOLD = 3;
++ ChildrenMovie(String title)
++ double getCharge(int daysRented)
+}
+class NewReleaseMovie {
+{static}- double CHARGE = 3;
+{static}- double EXTRA CHARGE = 1;
+{static}- int DAYS RENTED THRESHOLD = 2;
++ NewReleaseMovie(String title)
++ double getCharge(int daysRented)
++ int getFrequentRenterPoints(int daysRented)
+}
+
+Customer o-down-> Rental
+Rental -down-> Movie
+Movie <|-down- RegularMovie
+Movie <|-down- ChildrenMovie
+Movie <|-down- NewReleaseMovie
+
+@enduml
